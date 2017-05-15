@@ -1,0 +1,66 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Language" content="fr" />
+		<meta name="author" content="Kevin COISSARD" />
+		<!--<link rel="stylesheet" type="text/css" href="style.css"/>-->
+		<!--<script type="text/javascript" src="monscript.js"></script>-->
+		<title>
+		Formulaire TP2
+		</title>
+	</head>
+
+	<body>
+		<div id="formlulaire">
+			<form method="POST" action="analyseRequete.php" id="mon_form" autocomplete="off">
+				<fieldset>
+				<legend>Identité</legend>
+					<label>Nom</label> : <input type="text" placeholder="Entre votre nom" name="champ_nom" required="">
+					<br />
+					<label>Prénom</label> : <input type="text" placeholder="Entre votre prénom" name="champ_prenom" required="" autocomplete="on">
+					<br />
+				</fieldset>
+				
+				
+				<fieldset>
+				<legend>Coordonnées</legend>
+					<label>Email</label> : <input type="email" placeholder="Entre votre e-mail" name="champ_email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,5}$" required>
+					<br />
+					<label>Tél.</label> : <input type="tel" placeholder="0612345678" pattern="0[1-9][0-9]{8}" name="champ_telephone">
+					<br />
+				</fieldset>
+				
+				
+				<fieldset>
+				<legend>Message</legend>
+					<label>Objet</label> : <input type="text" name="champ_objet" required>
+					<br />
+					<label>Commentaire</label> : <textarea form ="mon_form" name="champ_commentaire" rows="4" cols="50"></textarea>
+					<br />
+					<button type="submit" form="mon_form" value="Envoyer">Envoyer</button>
+				</fieldset>
+			</form>
+		</div>
+
+		<br /><br /><br /><br /><br />
+
+		<form method="POST" action="" id="mon_form_voiture">
+			<fieldset>
+				<legend>Choisissez une ou plusieurs voitures</legend>
+				<label>Voitures</label> : 
+				<SELECT name="liste_voitures" multiple="multiple" size="5">
+					<OPTION>Fiat
+					<OPTION>Peugeot
+					<OPTION>Alpha Roméo
+					<OPTION>Mitsubishi
+					<OPTION>Toyota
+				</SELECT>
+				<br />
+				
+				<button type="submit" form="mon_form" value="Envoyer">Envoyer</button>
+			</fieldset>
+		</form>
+		
+	</body>
+</html>

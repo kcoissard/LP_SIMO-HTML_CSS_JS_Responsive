@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html id="background_page1">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Language" content="fr" />
+		<meta name="author" content="Kevin COISSARD" />
+		<link rel="stylesheet" type="text/css" href="style.css"/> 
+		<script src="script.js" type="text/javascript"></script>
+
+		<title>Accueil - Pokédex</title>
+	</head>
+
+	<body>
+		<header>
+			<!-- MENU -->
+			<div id="menu"></div>	
+		</header>
+		
+		<!-- js non demandé -->
+		<div id="topbar">
+			<span id="topbar_img2">
+				<img src="images/pokedex_logo.png"  class="img_topbar_pokedex">
+			</span>
+		</div>
+
+		<div>
+			<form>
+				Filtre de recherche : <input type="text" name="textFiltre" placeholder="ex : pokemon=ptitard">
+				<button>Envoyer</button>
+			</form>
+		</div>
+		<!-- js non demandé -->
+
+		
+		<!-- TABLEAU -->
+		<div id="pageContent"></div>
+
+		<!-- DETAIL POKEMON -->
+		<div id="detailPokemon"></div>
+		<div id="portrait_pokemon">
+				<span ><img src="images/ptitard.png" class="img_portrait_principal"></span>
+				<span id="portrait_nom">Ptitard</span>		
+			</div>
+
+			<div class="header_detail_pokemon">
+				<span id="description_pokemon_titre" class="titres_detail_pokemon"><strong>Description</strong></span>
+					<br />
+				<span id="description_pokemon_contenu"><strong>Tout ce que l'on sait, c'est qu'il est mignon.</strong></span>
+			</div>
+
+
+		<!-- article pour LE TYPE ET LE GENRE-->
+		<article class="flex_article border_radius_ptitard">
+			<section id="img_logo_type">
+				<p class="titres_detail_pokemon">Type</p>
+				<br/>
+				<img src="images/glace_logo.png" class="img_logo_type_detail">
+				<img src="images/eau_logo.png" class="img_logo_type_detail" id="logo_eau_mauvaise_qualite">
+			</section>
+			<section>
+				<p class="titres_detail_pokemon">Genre</p>
+				<br/>
+				<img src="images/logo_male.png" class="img_sexe">
+			</section>
+		</article>
+		
+		<!-- article pour LES GENERATIONS -->
+		<article class="border_radius_ptitard">
+				<p class="titres_detail_pokemon">"Famille Ptitard"</p>
+			<div class="flex_article">
+				<section>
+					<img src="images/ptitard.png" class="img_famille_pokemon">
+					<br />
+					<span class="nom_evolution">Ptitard</span>
+				</section>
+				<section>
+					<img src="images/tetard.png" class="img_famille_pokemon">
+					<br />
+					<span class="nom_evolution">Tetard</span>
+				</section>
+				<section>
+					<img src="images/tartard.png" class="img_famille_pokemon">
+					<br />
+					<span class="nom_evolution">Tartard</span>
+				</section>
+			</div>
+		</article>
+
+		<script type="text/javascript">
+			//chargement du menu
+			menuTop();
+
+			//chargement du tableau
+			tabPokemon();
+		</script>
+
+	</body>
+</html>

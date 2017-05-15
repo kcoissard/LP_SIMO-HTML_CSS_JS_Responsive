@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Language" content="fr" />
+		<meta name="author" content="Kevin COISSARD" />
+
+		<!--<link rel="stylesheet" type="text/css" href="style.css"/> -->
+		<script src="script.js" type="text/javascript"></script>
+
+		<title>Exercice 1 - Exam</title>
+
+		<style type="text/css"> 
+			body{
+				width: 25%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			section{
+				min-width: 320px;
+			}
+
+			h1{
+				font-weight: bold;
+				color: blue;
+			}
+
+			form{
+
+			}
+
+			fieldset{
+				text-align:right;
+				border-radius: 9px;
+				border-color: lightgrey;
+  				border-style: solid;
+			}
+
+			legend{
+				margin-left:25px;
+				text-align: left!important;
+				color:blue;
+			}
+
+			label {
+				text-align:right;
+		        width:50%;
+		        margin-right: 0.5em;
+		        padding-top: 0.2em;
+		        padding-bottom:2em;
+		        text-align: right;
+		        margin-top: 4%;
+    		}
+    
+    		input{
+				margin-top: 4%;
+				margin-right: 10px;
+    		}
+
+    		/*Selections par attribut name*/
+    		input:required{
+    			border-bottom-color: orange;
+    			border-right-color: orange;
+    		}
+
+
+
+   		</style> 
+	</head>
+
+	<body>
+		<section>
+			<h1>Inscription</h1>
+		
+			<form method="POST" action="#">
+				<fieldset>
+				<legend>Identité</legend>
+					<label>Nom</label> : <input type="text" placeholder="Ex : BOND" name="nom" required>
+					<br />
+					<label>Prénom</label> : <input type="text" placeholder="Ex : James" name="prenom" required>
+					<br />
+				</fieldset>
+
+				<fieldset>
+				<legend>Coordonnées</legend>
+					<label>Adresse</label> : <input type="text" placeholder="Ex : 7 Rue de la Joie" name="adresse1">
+					<br />
+					<input type="text" placeholder="Ex : Lieu-dit Formulaire" name="adresse2">
+					<br />
+					<label>Code postale</label> : <input type="text" placeholder="Ex : 69001" name="codePostale">
+					<br />
+					<label>Ville</label> : <input type="text" placeholder="Ex : Lyon" name="ville">
+					<br />
+					<label>Téléphone</label> : <input type="tel" placeholder="Ex : 0612345678" pattern="0[1-9][0-9]{8}" name="telephone" required>
+					<br />
+					<label>Mail </label> : <input type="email" placeholder="Ex : tata@yoyo.com" name="mail">
+				</fieldset>
+				
+				
+				<fieldset>
+					<legend>Enfants</legend>
+						<label>Nombre d'enfant</label> : <input id='nbEnfant' type="number" name="nbEnfants" min="0" max="15" onblur="FnbEnfant();">
+					</fieldset>
+					<div id='insertionEnfant'>
+					</div>
+			</form>
+		</section>
+			
+		<script type="text/javascript">
+		function FnbEnfant()
+		{
+			var text;
+			var nbEnfant=document.getElementById('nbEnfant').value;
+			var insertion=document.getElementById('insertionEnfant');
+			for(i=0;i<nbEnfant;i++)
+			{
+				text+="<br /><input type='text' required name='enfant".i."''>";
+			}
+			insertion.innerHTML=text;
+		}
+		</script>
+	</body>
+</html>

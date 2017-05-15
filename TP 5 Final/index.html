@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html id="background">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Language" content="fr" />
+		<meta name="author" content="Kevin COISSARD" />
+		<link rel="stylesheet" type="text/css" href="style.css"/> 
+		<script src="script.js" type="text/javascript"></script>
+
+
+		<title>Accueil - Pokédex</title>
+	</head>
+
+	<body>
+		<header>
+			<!-- MENU -->
+			<div id="menu"></div>	
+		</header>
+		
+		<!-- js non demandé -->
+		<div id="topbar">
+			<span id="topbar_img2">
+				<img src="images/pokedex_logo.png"  class="img_topbar_pokedex">
+			</span>
+		</div>
+
+		<div id="filtre_recherche">
+	        <input id="champsFiltre" type="text" name="champs_filtre" value="">
+		        <select name="type">
+		          <option value="all" selected>Tous</option>
+		        </select>
+	        <input type="submit" name="chercher" value="chercher" onclick="recherche();">
+      	</div>
+
+		<!-- js non demandé -->
+
+		
+		<!-- TABLEAU -->
+		<div id="pageContent"></div>
+
+		<!-- DETAIL POKEMON -->
+		<div id="detailPokemon"></div>
+
+		<script type="text/javascript">
+			//chargement du menu
+			menuTop();
+
+			//chargement du tableau
+			tabPokemon();
+		</script>
+
+	</body>
+</html>

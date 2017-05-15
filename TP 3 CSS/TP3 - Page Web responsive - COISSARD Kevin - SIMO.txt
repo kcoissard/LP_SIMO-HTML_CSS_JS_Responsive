@@ -1,0 +1,73 @@
+TP 3 PAGE WEB RESPONSIVE
+Kevin COISSARD - LP SIMO
+03/11/2016
+
+--------------------------------------------------------------------------------------------
+PARTIE 1 - Etude d'une page fournie
+--------------------------------------------------------------------------------------------
+QUESITON 1 :
+• A	quoi	sert	la	balise	<style>	incluse	dans	l’entête,	et	comment	sont	structurées	les	directives	qu’elle	contient	(à	quoi	elles	s’appliquent,	ce	qu’elles	font…)
+
+--> La balise <style> sert à insérer du code css directement dans la partie <head> du fichier html. Le code ne sera appliqué que sur ce fichier en particulier.
+Les éléments sont classés par ordre généalogique avec le parent <body>, puis l'enfant qu'il contient <header> etc...
+De cette façon on peut factoriser le code et appliquer de façon globale ce qui doit l'être comme la couleur "blue" du texte de la page sur <body> ou de façon plus détaillé la color du texte de la classe "detail" en noir.
+
+
+
+
+QUESITON 2 :
+• Pourquoi	le	titre	de	la	page	est	rose	alors	que	la	première	directive	définit	que	le	texte	doit	être	bleu.	
+
+--> Car la couleur du titre est redéfinie dans la balise <header>, et cette balise n'a pas d'élément enfant donc cette propriété est unique.
+
+
+
+QUESITON 3 :
+• Quelles	sont	les	différences	de	rendu	entre	«	Mon	premier	chapitre	»	et	«	Mon	second	chapitre	»	(apparence,	taille,…)	
+
+--> « Mon premier chapitre » hérite des propriétés de la classe "titre1" car il appartient à une <div> ayant cette classe. Dans le css déclaré, la classe "titre1" a des propriétés css changeant sa marge en haut et en bas, la rendant "gras" et augmentant la taille des caractères.
+« Mon second chapitre » hérite des propriété par défaut de la balise <h1> et des éléments parents.
+
+
+
+QUESITON 4 :
+• Quelles	sont	les	deux	approches	qui	ont	permis	d’arriver	à	des	rendus	si	similaires	?	Quelles	sont	les	limites	de	chacune	des	deux	approches	?	Laquelle	préféreriez-vous	et	pourquoi	?	
+
+--> Il y a l'approche "de base" en utilisant les propriétés par défaut de h1 et ses propriétés héritées des parents comme <body>. Cette approche me paraît plus simple et elle est à priorisé selon moi pour rendre le code plus compréhensible pour nous, et pour les robots. Seulement les balises <h1> ne sont pas faites pour être modifiées et il est difficile dans modifié une sans modifié toutes les autres lorsque l'on a notre code css dans une feuille de style à part.
+--> L'approche par "div" est plus modulable dans le sens où l'on peut réutiliser une classe éxistante, en créer une nouvelle ou appliquer un id unique. Cela rend le code moins lisible bien que plus facile à personnaliser.
+
+
+
+QUESITON 5 :
+• Dans	la	première	section	du	premier	chapitre,	le	texte	est	présenté	sur	trois	colonnes.	Les	directives	CSS	appliquée	à	.detail	définit	cette	présentation,	mais…	à	quoi	servent	respectivement	les	directives	column-count,	column-gap	et	column-rule	?	Pourquoi	sont elles	indiquées	chacune	3	fois,	avec	–moz-	ou	–webkit-	devant	?
+
+--> Column-count permet de répartir les paragraphes en trois colonnes.
+--> Column-gap permet de les espacer de façon égale.
+--> Column-rule permet d'insérer une barre de séparation entre chaque paragraphe.
+
+--> -moz- pour que le css s'applique sur le navigateur Mozilla
+--> -webkit- pour Webkit (Chrome, Safari, Android...)
+
+
+
+QUESITON 6 :	
+• Pourquoi	la	première	lettre	de	chaque	paragraphe	dans	ces	colonnes	est-elle	présentée	différemment	?	Comment	le	modifieriez-vous	pour	que	la	lettre	soit	un	peu	décalée	sur	la	droite	?
+
+--> cettre première lettre de chaque paragraphe a des propriétés différentes, elle a pu être ciblée grâce à ".detail p::first-letter".
+
+--> il faut appliquer "margin-left: 5px;"
+
+
+
+QUESITON 7 :
+• Retirez	les	directives	du	fichier	HTML	et	copiez	les	dans	un	fichier	indépendant.	Ajouter	les	balises	nécessaires	pour	que	ce	fichier	CSS	soit	utilisé	par	votre	fichier	HTML.	Quels	sont	les	avantages	de	cette	approche	?
+
+--> <link rel="stylesheet" type="text/css" href="style.css"/>  à mettre dans le <head>
+
+--> On peut factoriser le code css de plusieurs pages en utilisant surtout des classes.
+--> On séparre le html du css ce qui rend le code plus lisible
+
+
+--------------------------------------------------------------------------------------------
+PARTIE 2 - Ajout de	style sur une page existante
+--------------------------------------------------------------------------------------------
